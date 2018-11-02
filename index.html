@@ -1,1 +1,73 @@
-Hello World
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SI 649 Individual Project</title>
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="js/draw.js"></script>
+    <div class="container">
+        <div class="row">
+
+            <div class="ten columns offset-by-one alpha" style="border-bottom:2px solid #494949;margin-bottom:30px;">
+                <h1>The Electoral College - SI649</h1>
+            </div>
+        </div>
+
+
+</div>
+        <div class="row">
+            <div class="ten columns offset-by-one">
+              <p>In most elections, the candidate with the most votes wins. This is called <a href="https://en.wikipedia.org/wiki/Proportional_representation" target="blank">Proportional Representation</a>, each voter has the same power! But for presidential elections in the US, the Electoral College system is used instead.  In this system, instead of counting the popular vote, we count the number of "Electoral College Votes" and each state gets a different number of Electoral Votes based on their population size.</p>
+              <p>In the Electoral College System, every state is garunteed 3 Electoral Votes regardless of the states' population. After that additional electoral votes are distributed based on on states' populations.
+                This means that states that less populous states, especially those that never qualified for additional electoral votes, often have less voters per electoral college voters. This relationship between total voters and electoral college voters is called "Voter Power"
+              </br><b>Voting Power = (# of Votes)/(# of Electoral Votes)</b></p>
+              <p>Below we have aligned our states up along the median Voting Power - this is what the system would look like with <b>Proportional Representation</b>. Click the button to rearrange the states to show how power was distributed in the 2016 election.</p>
+              <div class="one columns">
+                <button onclick="moveBubbles()">Arrange States</button>
+              </div>
+            </div>
+            <div class="ten columns offset-by-one alpha" id="chart1">
+            </div>
+        </div>
+        <div class="row">
+          </div>
+          </div>
+          <div class="row">
+            <div class="ten columns offset-by-one alpha" style="border-bottom:2px solid #494949;margin-bottom:30px;">
+              <h4>Make your own state</h4>
+              <p>The distribution for electoral votes is a little complex, so for this interactive visualization we've used the approximation of <a href="http://www.slate.com/articles/news_and_politics/map_of_the_week/2012/11/presidential_election_a_map_showing_the_vote_power_of_all_50_states.html" target="blank">436,000</a> citizens per electoral votes. Try adjusting the state's population to see how it affects some other factors.<p>
+              <p>Remember: <b>Voting Power = # of Votes/# of Electoral Votes</b> and the <b># of Votes = (Voting Age Population)*(Voter Turnout)</b></p>
+              <p>Finally, we calculate the <b>Relative Voter Weight</b> by dividing our state's Voting Power over the Median Voting Power</br></br><b>Relative Voter Weight = Voter Power/Median Voter Power</b><p>
+            </div>
+              <div class="ten columns offset-by-one alpha" id="chart2">
+                <div class="three columns">
+
+                    <p id="population"></p>
+                    <div class="slidecontainer">
+                      <input type="range" min="500000" max="30000000" id="myStateSlider">
+                    </div>
+                    <p id="voterTurnout"></p>
+                    <p id="ElectoralVotes"></p>
+                    <p id="voterWeight"></p>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="ten columns offset-by-one">
+                <div class="one columns">
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+</body>
+</html>
